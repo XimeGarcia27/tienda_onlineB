@@ -1,0 +1,121 @@
+Desarrolla una tienda de ropa online basada en el diseño previamente proporcionado (estilo moderno, minimalista tipo Zara/H&M, completamente responsive y enfocado en conversión).
+
+El proyecto corresponde al siguiente paquete comercial:
+
+🟢 Paquete Inicial – $6,500 MXN
+
+Catálogo web administrable
+
+Botón de WhatsApp integrado
+
+Hasta 50 productos
+
+Capacitación básica al cliente
+
+1 mes de soporte
+
+👉 Mensualidad posterior: $700 MXN
+
+🎯 Requerimientos Funcionales
+🛍️ Catálogo Web
+
+Gestión de hasta 50 productos.
+
+Cada producto debe incluir:
+
+Imagen principal.
+
+Nombre.
+
+Precio.
+
+Tallas disponibles (XS, S, M, L, XL).
+
+Botón “Agregar al carrito”.
+
+Panel administrativo para:
+
+Agregar, editar y eliminar productos.
+
+Actualizar precios.
+
+Subir imágenes.
+
+Activar/desactivar productos.
+
+📱 Integración WhatsApp
+
+Botón flotante visible en todo el sitio.
+
+Al agregar productos al carrito, permitir enviar pedido directo a WhatsApp con resumen automático del pedido.
+
+👤 Autenticación
+
+Login y registro de usuarios.
+
+Recuperación de contraseña.
+
+Panel básico para que el usuario pueda ver sus pedidos.
+
+🧠 Tecnología Recomendada
+🔧 Backend (Recomendado)
+
+Node.js + Express + MongoDB
+
+Justificación:
+
+Escalable.
+
+Ideal para catálogo dinámico.
+
+Buen rendimiento.
+
+Fácil despliegue en VPS o servicios como Railway, Render o DigitalOcean.
+
+Permite crecimiento futuro (pagos en línea, inventario avanzado, etc.).
+
+Alternativa si se requiere algo más empresarial:
+
+ASP.NET Core + SQL Server.
+
+🎨 Frontend
+
+React (Vite)
+
+Tailwind CSS
+
+Diseño completamente responsive
+
+Optimizado para móviles (mobile-first)
+
+Carga rápida y optimización de imágenes
+
+🔒 Consideraciones Técnicas
+
+Panel admin protegido por roles.
+
+Base de datos estructurada correctamente (usuarios, productos, pedidos).
+
+Buenas prácticas de seguridad:
+
+Hash de contraseñas (bcrypt).
+
+JWT para autenticación.
+
+Preparado para futura integración de pasarela de pagos.
+
+SEO básico implementado.
+
+📦 Entregables
+
+Código fuente completo.
+
+Base de datos estructurada.
+
+Manual básico de uso.
+
+Capacitación inicial.
+
+Documentación para mantenimiento.
+
+Instalación en hosting del cliente.

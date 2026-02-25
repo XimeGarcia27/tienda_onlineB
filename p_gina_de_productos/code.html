@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1791",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#21111c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-4">
+<div class="mx-auto max-w-[1400px] flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">local_mall</span>
+<h2 class="text-xl font-bold tracking-tight">MODA.</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Mujer</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Hombre</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Accesorios</a>
+<a class="text-sm font-semibold text-primary" href="#">Ofertas</a>
+</nav>
+</div>
+<div class="flex items-center gap-6 flex-1 justify-end">
+<div class="relative hidden sm:block w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-100 dark:bg-white/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50" placeholder="Buscar productos..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/10 rounded-full text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 hover:bg-primary/10 rounded-full text-slate-700 dark:text-slate-200 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfGE4-jTuFRszQx38ERX33qJdYxXghn3mVRxbBBTV8oXo_03b_UNB4MxgolCnVWN2WUI1XDtnYuuVm--LK5nYw_uu6X4wLIZ43XTwYJ6K96AcVTlX9H4meQoW8WqPw8MS7SplVrtJBm9R4ndhoVEUDjKxvX8iTCXvvB_cIATdYze_DgAS7WPqVrk08slHu3zcYxgeGZgGsY9oS93p7ES3fSib1sX2y_mfuZ6nFPijTazgSb_Sbv6QH0U_HD_1T0uJnkmpiyldBJI4"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 lg:px-20 py-8 mx-auto max-w-[1400px] w-full">
+<div class="flex flex-col md:flex-row gap-12">
+<aside class="w-full md:w-64 shrink-0 space-y-8">
+<div>
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">tune</span>
+                            Filtros
+                        </h3>
+<div class="space-y-6">
+<details class="group" open="">
+<summary class="list-none cursor-pointer flex items-center justify-between py-2 border-b border-primary/10">
+<span class="text-sm font-semibold">Categoría</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group/label">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover/label:text-primary transition-colors">Vestidos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/label">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover/label:text-primary transition-colors">Camisetas</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/label">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover/label:text-primary transition-colors">Pantalones</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/label">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover/label:text-primary transition-colors">Abrigos</span>
+</label>
+</div>
+</details>
+<details class="group" open="">
+<summary class="list-none cursor-pointer flex items-center justify-between py-2 border-b border-primary/10">
+<span class="text-sm font-semibold">Talla</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 grid grid-cols-3 gap-2">
+<button class="py-2 text-xs font-medium border border-slate-200 dark:border-white/10 rounded hover:border-primary hover:text-primary transition-all">XS</button>
+<button class="py-2 text-xs font-medium bg-primary text-white rounded">S</button>
+<button class="py-2 text-xs font-medium border border-slate-200 dark:border-white/10 rounded hover:border-primary hover:text-primary transition-all">M</button>
+<button class="py-2 text-xs font-medium border border-slate-200 dark:border-white/10 rounded hover:border-primary hover:text-primary transition-all">L</button>
+<button class="py-2 text-xs font-medium border border-slate-200 dark:border-white/10 rounded hover:border-primary hover:text-primary transition-all">XL</button>
+</div>
+</details>
+<details class="group" open="">
+<summary class="list-none cursor-pointer flex items-center justify-between py-2 border-b border-primary/10">
+<span class="text-sm font-semibold">Rango de Precio</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 px-2">
+<input class="w-full accent-primary h-1 bg-slate-200 dark:bg-white/10 rounded-lg appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-medium text-slate-500">
+<span>$0</span>
+<span>$500</span>
+</div>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<div>
+<h1 class="text-2xl font-bold">Ropa de Temporada</h1>
+<p class="text-slate-500 text-sm mt-1">124 productos encontrados</p>
+</div>
+<div class="flex items-center gap-4">
+<label class="text-sm font-medium text-slate-500">Ordenar por:</label>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer">
+<option>Más recientes</option>
+<option>Menor precio</option>
+<option>Mayor precio</option>
+<option>Popularidad</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+<!-- Product Card 1 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist yellow dress model photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEW3nJFyzESWenrqOlYt0YaTUyDcstTxzfF9QTIqdn4HJdchl_fHnbwN3rsoq_FKvrxKwBilryp3ysev9Kp6mGxSYFjCwJTRqQfRST4NZYEQ2TF0xTRSQAZGKE6F8xWtNmQ52rJonYcqSQfvri_-zEs385scX2vi1-JbUjFKYz2sFFiJfX6Y8HLXbIJ15H5n6C5ZhluyMtagk3Vta9UbSkS-EVux1035FdZ_mMd_qocQdTatXKmUrvj0-O4A_QDWaMQ61y_lYUn_A"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Vestido Midi de Lino</h3>
+<span class="font-bold text-primary">$89.90</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Amarillo Crema</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">XS</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded bg-slate-100 dark:bg-white/10">M</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Stylish black leather jacket model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh60bpcmSyDcZY4avvJwftwKK6HHNXLOO3OpFhM2_94kHwyQLbamcm8D18uCZJtULtvL6aU690luLXMOor6eatNMNK2seHKB3MlJpfQwLtebYNQ5V5F-xcfy-BKcyhnBezfGJFnF4xooTMJ2LVexzPkSgSso4v76cRNI8toJwcl6NEcab63eXs75NZJGc_aDItUKyJuoVdS9iXlec4EMRfNewfjE0v2itAh6qF3bvhSWkO5iNM-XeEwirBtHMnmzT89TZ240d14Rk"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Chaqueta Biker Cuero</h3>
+<span class="font-bold text-primary">$124.00</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Negro Mate</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">M</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">L</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Oversized beige knit sweater model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJGlFcAuBeMztrFM47p7axtpogbUWVKNmL_vpoX6qencDFS9pRTphPjd9tSwvhkHFTW8AMuBA6OCwjQZsBXotgQZiyO9ZIWL0xSIi0vzbs2faevXs2StRZseB3T5CWUQSwRKIuub5nfK5WhJtrkxLJgXIsM3q1HHsiXbRVwZ6cIcokgf5C13dRuSsahDGLi_QStmmki2ZPBKpeNcd2GiG_DPm1aQuySx8Fh6HM2SBvKEuJjfbgRy3aYO8rCiGEdwe20CY0_I5lOfY"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Jersey de Punto Oversized</h3>
+<span class="font-bold text-primary">$55.00</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Beige</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">XS</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">M</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Classic blue jeans layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIrB_ZWT7RAcItO4bvdWwHlWRiq5HrWb0m2uzgTAGR5Mt20dDxqtZPieiDSsEUubc7rc6xpM8c76JB106vH5ZZqTxap8JsEpsxoDIZ66YLY1Bmq6nRu1jDZ1u7v0B6PCRgTFPfK75KY0g-PcfA3OsXMKmEPItpkrixLIhtTpAWIGcqnBlwEtulPJqWkv3PfSiXSKarSHcLkObQ7Kqt23UGMKCexiH4-YGgloMDS_07GDGb-p3KdSLdQrPid9t4VrAZERAIFUwlsWw"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Jeans Rectos Clásicos</h3>
+<span class="font-bold text-primary">$72.50</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Azul Indigo</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">M</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">L</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Silk white blouse flat lay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcp2sH8NrejWf_MPMfsItXDfHv-NW6dd8uBTfJRbCYNNqrt5XOlvZtvnfMjN70h70Sx1lW09X3RzBFTkYEm4v0xZEFCIPk1XXwWrQ-zxD6WMA9e0e2P4EZjj_0frnFXy1vehXU94ecV0I8ufWG90ZZyl5n74wyP69o4FySTPtR0yAExkJ2-BfPVXrgWmXEEdy5fMDsVj2hX_-J_fwzFAI9lX--ikErHEl6RdDsEYcunFvKpbR2x1XqcqRpHHKgXUMTClKe_yKgBV4"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Blusa de Seda Pura</h3>
+<span class="font-bold text-primary">$95.00</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Blanco Marfil</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">XS</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">M</span>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Light floral print spring dress model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn088ZIp1IV4HmIyz3D-MJmSu6tZEJpFvXxpDjHBp0LE4Y1XH2QSonc56Pi7SKwf8nxk-NHWI082ZIYON6FFr78_quPgESOXUjZptNyMv-8iODCOcpyyVMla3W1LCgw4lAva3V2WedgKtud8ent6scl4ekvHmMbbkATjgtqXDTCOqaJigk2tUanriwKBQDhP25Ra1x8dbUib-_HcdoFAQu2LewBvikIhcT8WSsFj4hrYFWufct8NuS1UNWs2BXpzGYRGjsRe6AnCw"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full shadow-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                        Agregar al carrito
+                                    </button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">Vestido Floreado Primavera</h3>
+<span class="font-bold text-primary">$68.00</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Color: Floral Soft</p>
+<div class="flex gap-2 pt-1">
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">S</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">M</span>
+<span class="w-6 h-6 flex items-center justify-center text-[10px] font-bold border border-slate-200 dark:border-white/10 rounded">L</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary/5">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary/5 font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary/5 font-bold">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary/5">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-primary/10 py-12 px-6 lg:px-20 mt-20">
+<div class="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">local_mall</span>
+<h2 class="text-lg font-bold tracking-tight">MODA.</h2>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed">Las últimas tendencias en moda femenina y masculina con la mejor calidad y servicio al cliente.</p>
+</div>
+<div>
+<h4 class="font-bold mb-6">Explorar</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Nueva Colección</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bestsellers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guía de Tallas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sostenibilidad</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Soporte</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Envíos y Entregas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Devoluciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Preguntas Frecuentes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Newsletter</h4>
+<p class="text-sm text-slate-500 mb-4">Suscríbete para recibir ofertas exclusivas.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-slate-100 dark:bg-white/5 border-none rounded-lg text-sm px-4 focus:ring-1 focus:ring-primary" placeholder="Tu email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold">Unirme</button>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-[1400px] border-t border-primary/10 mt-12 pt-8 flex flex-col md:row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 MODA Store. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Términos</a>
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

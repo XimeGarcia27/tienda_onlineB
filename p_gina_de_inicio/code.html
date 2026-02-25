@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1791",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#21111c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Modern Clothing | Home</title>
+</head>
+<body class="bg-white text-slate-900 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 px-6 lg:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+<h2 class="text-xl font-black tracking-tighter uppercase">Modern Clothing</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center bg-slate-100 rounded-full px-4 py-1.5">
+<span class="material-symbols-outlined text-slate-500 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 lg:w-48 placeholder:text-slate-400" placeholder="Search" type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000" data-alt="High fashion editorial model in designer clothing" style="background-image: linear-gradient(to right, rgba(0,0,0,0.4), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAiJOAeCfhRDXnIIUXDkXJ-GMAZO5MwZ0avLiKbFst-yS4yHSoM7_v3egk2fmYByhJ4tovV2anEOLsZLRq4MRuFSHYqaRKlpsVw4aYVoQiT1Z4cHISl7Y2z2OnTeKQ2jZQo5AMTdm7RsQI4mFX_JrDYnbpWkovtHRrE73UMWvWe7wCFlVe5C3Wg9SUQ3XkMlL5oCuwR1GXRf1HP_QIJUf6136X-iwXEiM6-8Yz-k3FT94ntG7VQmMxgn09NpmfjpuoCrUba4yMzVU');">
+</div>
+<div class="relative h-full max-w-7xl mx-auto px-6 lg:px-20 flex flex-col justify-center items-start text-white">
+<p class="text-sm font-bold tracking-[0.3em] uppercase mb-4 opacity-90">Season Premiere</p>
+<h1 class="text-5xl md:text-8xl font-black leading-none tracking-tighter mb-8">
+                    NUEVA<br/>COLECCIÓN<br/>2026
+                </h1>
+<button class="bg-white text-slate-900 hover:bg-primary hover:text-white transition-all duration-300 font-bold px-10 py-4 rounded-full text-lg shadow-xl uppercase tracking-wider">
+                    Comprar ahora
+                </button>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="max-w-7xl mx-auto px-6 lg:px-20 py-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-black tracking-tight uppercase">Categorías</h2>
+<div class="h-1 w-12 bg-primary mt-2"></div>
+</div>
+<a class="text-sm font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors" href="#">Ver todas</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Hombre -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Stylish man in modern street wear" style="background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1u9NO_CQet0iliIqsDXU_Pa76IuBSKHAon0DFZpPqfqj4u4co1EB73bP0B4oFPyVdwckpfIldi8uk-7CGmo8qxttrcv6H86GZ8gnGqQNFU5uVKczYXg9RL1ox7UcaGusxfSOSRvfWeyKSN__zSm7M_DVIZIfilbiVh_6A3_BnYqBrZupEUsOJF8iLLn_G_B3l89NRrQzWJ32JgFKrt7FoU_nBNy5tjqmfnCucDbG_SYYetOu0eYLGoOizH0CW6O-DasquugFmyU8');"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-white text-2xl font-black uppercase">Hombre</h3>
+<p class="text-white/80 text-sm font-medium mt-1">Explorar Colección</p>
+</div>
+</div>
+<!-- Mujer -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Modern woman posing in luxury fashion outfit" style="background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyyULlhgnZcal_jgaCS3QQ9CyYHpIjZo6eIGAlBPresh4ynWQKVJjKH24fAbqvAjqr92q59xEqaZmYP_zkdtcXVkRzZ5U3Pz4FCiMLGrUC9hGrCeF6Rf2hidyx6ypUNKcsaAQmJb8gn4ysbgTzScDlunRvKyFEyeiv5ibzBp3Kam-VEKhZPwXlRwm-dlW-ELigCXO61o9ZYp9obiIghigyeJHyqRtZ4IT13Enq3uNkGEZ4X1jQa1p4Hk9WvWHFxKq7cYlnm9mrurA');"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-white text-2xl font-black uppercase">Mujer</h3>
+<p class="text-white/80 text-sm font-medium mt-1">Explorar Colección</p>
+</div>
+</div>
+<!-- Accesorios -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist luxury accessories and watch display" style="background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuByiCOQz-Qs55VNC8nlzbbp159xEZDIHmjz5tk_KV23_pxfqqZYsOmXH8vO0vOUVmrHvxqptdPX9x13GfWxb18QjkyyPoSbIVMSp9VFGdQMKcIBCrCEu2SHbxRqly7R_v0R2IUfs1RUCXKQOnOqXU1SXEGFhlstcKIOg_ThDSoaJPWOrRLAG9G5dxRveXjEPYV-OTSBPkn0n-Ft4NNxZ-dz-XyuGRUPBck6joPYwyVRDD_hwepU0yvQAbB4m4rpVrbj54k3NDgamc8');"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-white text-2xl font-black uppercase">Accesorios</h3>
+<p class="text-white/80 text-sm font-medium mt-1">Explorar Detalles</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="bg-slate-50 py-24">
+<div class="max-w-7xl mx-auto px-6 lg:px-20">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-black tracking-tight uppercase">Productos Destacados</h2>
+<div class="h-1 w-12 bg-primary mt-2"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+<img alt="Minimalist Coat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist beige wool coat on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjefqtLADRfiPGr3ydxbpOj70TqPqsci107sicsr1BD_q8dS_E2LbJ60CuAPCsTUqHrTvc-gCEZbzA8sW6pU3TJzDcb3m2227q-GyReHRMvevNfEE62fYVnA3YScEKZi8rDBrHwT2LJUHbG3o7uKH7irT3wrA6khDtcDJfQtHj0IjNfVSHwTsdPt9V_uowMlJ9ZkebnTRhXm0W9H-67GKtSAznG8b2y8e33nhGmXF5bDcKIQFMaJfAcC4p7R8XDHsYKQsIlGr-KSo"/>
+<button class="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Minimalist</p>
+<h4 class="font-bold text-slate-800">Linen Blend Jacket</h4>
+<p class="text-primary font-black mt-1">$129.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+<img alt="Classic T-shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic essential cotton t-shirt lifestyle shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFv4ZXSy7Hz-SJntMGx7OZSixXUoka4kmh6mYgUG_YUXkW8KDHypgzFa0oV691XQrK3M5gueG8epO9ueJq2aGtLngBUx_5OS6uRKAFKh9O7sWZk3BfBx64tpNKeNb_p-ZMOBR_Re9wwvzhj16aGGvezAJ3JJyVNfAd6SKYp_e0lbVeI3_AM-h-pPcqLV7gRvxFMXeICTutwxI9UOPKlEpJCI0BkVWQ6ERQz67SfZ5K1-xjvrqMAXT82pFXqKf_TNfcjfeDNbVbcXA"/>
+<button class="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Essential</p>
+<h4 class="font-bold text-slate-800">Cotton Essential Tee</h4>
+<p class="text-primary font-black mt-1">$45.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+<img alt="Denim Jeans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High quality denim jeans close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLGUqc7u5Z_8KduL1406amMAHYe2478M8QC5TwtIeR3Yp4kV0hl4vU1r1DaskQRZQ71-z3eV_R852Az6vywjVHuR45_s_xbhejMe68MwHLF0gtySKRMOnRbTI2Rqn1IfCd_eSnAYLcilEE45no7MZ3nKum3AE91eA_KMvRBfj3qYxtSeS4B-qHQJP5LSQXyTsn5djXuexVHvQ493vrK-5lfBdXuyKJ0jVf7cmC4PP6f9PSaHZ94-dCnle14E4jKm7Ntwn5BpUwf4"/>
+<button class="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Denim</p>
+<h4 class="font-bold text-slate-800">Straight Fit Denim</h4>
+<p class="text-primary font-black mt-1">$89.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+<img alt="Leather Boots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek black leather boots product photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWH1MWC3fPxkAy_cHC8q-7wrmeIYwbYaSbwj5RgZovbAIGXDsa-RT289pdBhXOvVD3ApMhp18LFsaruZwBticIYBc0hGljiijPAxKE0Mpx7PQTE80tjQioXJizR9V1OIZbYTdVHUVEAMXEU89EWHMWwn9aWIVFP5ofmTfCVGQLCctwyEobyO1kU42eh0dm4cbbju0E6o3dujpRvx5U_yIJXyEltPiePyq7d_wcDVL5vcMoBBZe8-Jif2q2uNd0_g-z9UBXmxhV78s"/>
+<button class="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Footwear</p>
+<h4 class="font-bold text-slate-800">Classic Leather Boots</h4>
+<p class="text-primary font-black mt-1">$199.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-7xl mx-auto px-6 lg:px-20 py-24 text-center">
+<div class="bg-slate-900 text-white rounded-3xl p-12 lg:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-primary/20 rounded-full -ml-24 -mb-24"></div>
+<h2 class="text-3xl md:text-5xl font-black mb-6 relative z-10">Únete al Club Modern</h2>
+<p class="text-slate-400 max-w-lg mx-auto mb-10 relative z-10">Suscríbete para recibir noticias sobre lanzamientos exclusivos, eventos y un 15% de descuento en tu primera compra.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-10">
+<input class="flex-1 bg-white/10 border-white/20 rounded-lg px-6 py-4 focus:ring-primary focus:border-primary" placeholder="Tu email" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-lg transition-all" type="submit">Suscribirme</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-100 pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+<h2 class="text-xl font-black tracking-tighter uppercase">Modern Clothing</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Definiendo el estilo minimalista para la era moderna. Calidad premium y diseño atemporal.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold uppercase text-xs tracking-widest mb-6">Shop</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Hombre</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mujer</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accesorios</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nuevas Llegadas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold uppercase text-xs tracking-widest mb-6">Compañía</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Nuestra Historia</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sostenibilidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold uppercase text-xs tracking-widest mb-6">Soporte</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Envío</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Devoluciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-400">© 2026 MODERN CLOTHING. Todos los derechos reservados.</p>
+<div class="flex gap-8 text-xs text-slate-400 font-bold uppercase tracking-widest">
+<a class="hover:text-slate-900 transition-colors" href="#">Privacidad</a>
+<a class="hover:text-slate-900 transition-colors" href="#">Términos</a>
+<a class="hover:text-slate-900 transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

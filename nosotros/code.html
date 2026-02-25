@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1791",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#21111c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Nosotros | Moda Elegante</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-3 bg-white dark:bg-background-dark lg:px-40">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">unfold_less</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Moda Elegante</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors" href="#">Tienda</a>
+<a class="text-primary text-sm font-bold" href="#">Nosotros</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-slate-900 dark:text-slate-100 px-3">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-slate-900 dark:text-slate-100 px-3">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="px-4 lg:px-40 py-8">
+<div class="@container">
+<div class="relative flex min-h-[400px] md:min-h-[500px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-4 overflow-hidden" data-alt="Interior minimalista de un estudio de moda moderno y luminoso" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyNAfWxQfz8Jj51d9n7VXRKsnvHZoOJi7Hmxrum1H9D4kQu0NGGpWqTzIW9j-UIQ2IKXatkEJzBXaXrxYlvynuhTlR5CVupDwXP5p_Pifp6tmMNyI1r19pWCVy9RcKg31hKSEA_u3VGLVhvQDIs81DZg-lYPQaJflCU8TpdB0CxVPTt-vEzCq10cG91Zw7OaFj7Ju3UF8C3H_dX_L50g23J2EciErgDitCOZFBD3Dm4YE2mu4icse2a8z_x9Dwlv9ULj51EN7yDpc");'>
+<div class="flex flex-col gap-4 text-center max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl">
+                                    Nuestra Esencia
+                                </h1>
+<p class="text-white/90 text-lg font-normal leading-normal">
+                                    Donde el diseño contemporáneo se encuentra con la artesanía tradicional.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Historia Section -->
+<section class="px-6 lg:px-40 py-16 bg-white dark:bg-slate-900/50">
+<div class="max-w-[960px] mx-auto text-center">
+<span class="text-primary font-bold tracking-widest text-sm uppercase">Desde 1994</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-bold leading-tight mt-4 mb-8">Nuestra Historia</h2>
+<div class="space-y-6 text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+<p>
+                                Lo que comenzó como un pequeño taller familiar en el corazón de la ciudad se ha convertido en un referente de elegancia y sofisticación. Nuestra fundadora, con una visión clara de redefinir la moda cotidiana, apostó por la calidad sobre la cantidad.
+                            </p>
+<p>
+                                Cada pieza de nuestra colección cuenta una historia de dedicación, materiales premium y un compromiso inquebrantable con la sostenibilidad. No seguimos tendencias efímeras; creamos clásicos modernos que perduran en el tiempo.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Misión y Visión Section -->
+<section class="px-6 lg:px-40 py-16">
+<div class="max-w-[960px] mx-auto grid md:grid-cols-2 gap-12">
+<div class="bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/10 shadow-sm">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">target</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Misión</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Empoderar a nuestros clientes a través de prendas que reflejen su autenticidad y elegancia, manteniendo siempre los más altos estándares de producción ética y responsable.
+                            </p>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/10 shadow-sm">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Visión</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Ser la marca líder global en moda consciente, demostrando que el lujo y la sostenibilidad pueden coexistir en perfecta armonía en cada costura y diseño.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Equipo Section -->
+<section class="px-6 lg:px-40 py-16 bg-white dark:bg-slate-900/50">
+<div class="max-w-[960px] mx-auto">
+<h2 class="text-slate-900 dark:text-slate-100 text-3xl font-bold text-center mb-12">Nuestro Equipo</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-12">
+<div class="flex flex-col items-center text-center">
+<div class="size-48 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+<img alt="Perfil de Elena Martínez" class="w-full h-full object-cover" data-alt="Retrato circular de una mujer sonriente con ropa profesional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG-xvyewIoTz5jQx-39Yhe695QvKtWfLf4aXp-i4izgHeR6zdO9hSVXA_p1wTGkQDl2rszsbBYM8hVLCzkRtnMNSUVbqVYVHZBJzG0jOAeHfZo84gfl_d382gpZ03RyhQpLC4gCpf-Xz_yLsncRwHQTymv1LN0YAcyvvBjdFl1Enzjjqy8bVc5MUJ-ljG-ZDcn25soHM3AcLTopAmkXbQ8lfjKdUpnjd4fzisWdJSHX8S6cP3FP-MCRlvWVYCuNvMDWpAajkv7gSk"/>
+</div>
+<h4 class="text-lg font-bold">Elena Martínez</h4>
+<p class="text-primary text-sm font-medium uppercase tracking-wide">Directora Creativa</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="size-48 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+<img alt="Perfil de Julián Soto" class="w-full h-full object-cover" data-alt="Retrato circular de un hombre con gafas y estilo moderno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQPLbcaGnPve7Ec2k49Cw7CL_zPB4szRF91hISWZLi4Htjn6XkmIIeJ35UrWSym_GcBBo2flwqFB7Ilu7qRBogwOb6IOEh8eYk3J9SAQKr_EWogSBVbNDBzxBQ-1vlrvGFjZ3G1CoNDxpZPvv5Gb497NN3tufzCw-ZcUdOgO3Vaiht-N5VLMQvDJrYozSj1pDKdV_KcoqYzqJEbqAvMK_hPzPRqVCYTyyg_oN5EjWcDP4suyp_gaW0id-PI0FMTKPbynX9Enq7_tI"/>
+</div>
+<h4 class="text-lg font-bold">Julián Soto</h4>
+<p class="text-primary text-sm font-medium uppercase tracking-wide">Jefe de Diseño</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="size-48 rounded-full overflow-hidden mb-6 border-4 border-primary/20">
+<img alt="Perfil de Sofía Vega" class="w-full h-full object-cover" data-alt="Retrato circular de una mujer joven con peinado elegante" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzb857VDd71xUtIXHNMtV_eUHfReFmxuAr_aLrM3x2BEK26baDFCbHTz-6yNcdEkZXtBKLQ2ksgR10OFm2gD0Ah6HVgkdkMwltMij_jE10MMtdZ5a9ENI94-WZ2tf-BJknynHBIIi9oLDhyQ-pc7ihcItkTKBzDttF17lPgjo1eR4gokLT8bm5HHSYTrhcp0iNey-4WjBKNy4jyqG-CR8YvzWlLLCBB4sC5Q0JrS1h-oXmj_ilonNJAmQ7TaqfVbsEQ9ehj4BYohM"/>
+</div>
+<h4 class="text-lg font-bold">Sofía Vega</h4>
+<p class="text-primary text-sm font-medium uppercase tracking-wide">Responsable de Sostenibilidad</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="px-6 lg:px-40 py-10 border-t border-primary/10 bg-white dark:bg-background-dark">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">unfold_less</span>
+<span class="font-bold text-lg">Moda Elegante</span>
+</div>
+<div class="flex gap-6 text-sm text-slate-500">
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Términos</a>
+<a class="hover:text-primary" href="#">Instagram</a>
+</div>
+<p class="text-xs text-slate-400">© 2024 Moda Elegante. Todos los derechos reservados.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
