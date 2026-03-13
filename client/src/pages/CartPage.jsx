@@ -2,18 +2,48 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, MessageCircle, ArrowRight } from 'lucide-react';
 import useCartStore from '../store/cartStore';
+import useAuthStore from '../store/authStore';
+import api from '../api';
 
 const CartPage = () => {
     const { cartItems, removeItem, getTotalPrice } = useCartStore();
+    const { userInfo } = useAuthStore();
     const navigate = useNavigate();
 
-    const checkoutHandler = () => {
-        const total = getTotalPrice();
-        const itemsList = cartItems.map(item => `- ${item.name} (${item.size}) x${item.qty}: $${(item.price * item.qty).toFixed(2)}`).join('%0A');
-        const message = `*Nuevo Pedido - STITCH*%0A%0A${itemsList}%0A%0A*Total: $${total.toFixed(2)}*%0A%0A_Por favor, confírmenme los detalles de envío._`;
+    const checkoutHandler = async () => {
+        if (!userInfo) {
+            navigate('/login?redirect=cart');
+            return;
+        }
 
-        const phoneNumber = '521234567890'; // Replace with actual number
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        const total = getTotalPrice();
+
+        try {
+            // Save order to database
+            const orderData = {
+                orderItems: cartItems.map(item => ({
+                    name: item.name,
+                    qty: item.qty,
+                    image: item.image,
+                    price: item.price,
+                    size: item.size,
+                    product: item.product
+                })),
+                totalPrice: total,
+            };
+
+            await api.post('/orders', orderData);
+
+            // Proceed to WhatsApp
+            const itemsList = cartItems.map(item => `- ${item.name} (${item.size}) x${item.qty}: $${(item.price * item.qty).toFixed(2)}`).join('%0A');
+            const message = `*Nuevo Pedido - STITCH*%0A%0A${itemsList}%0A%0A*Total: $${total.toFixed(2)}*%0A%0A_Por favor, confírmenme los detalles de envío._`;
+
+            const phoneNumber = '524272441012'; // Replace with actual number
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        } catch (error) {
+            console.error('Error creating order', error);
+            alert('Hubo un error al procesar tu pedido. Por favor intenta de nuevo.');
+        }
     };
 
     return (
@@ -33,7 +63,11 @@ const CartPage = () => {
                         {cartItems.map((item) => (
                             <div key={`${item.product}-${item.size}`} className="flex gap-6 p-6 bg-white border border-slate-100 rounded-2xl">
                                 <div className="w-24 h-32 rounded-xl overflow-hidden flex-shrink-0">
-                                    <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                    <img 
+                                        src={item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`} 
+                                        alt={item.name} 
+                                        className="w-full h-full object-cover" 
+                                    />
                                 </div>
                                 <div className="flex-1 flex flex-col justify-between">
                                     <div className="flex justify-between items-start">

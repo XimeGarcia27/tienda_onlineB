@@ -5,7 +5,7 @@ import Product from '../models/productModel.js';
 // @access  Public
 const getProducts = async (req, res) => {
     try {
-        const products = await Product.find({ active: true });
+        const products = await Product.find({});
         res.json(products);
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -1,40 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingCart } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import useCartStore from '../store/cartStore';
+import api from '../api';
 
 const HomePage = () => {
+    const [products, setProducts] = useState([]);
     const addItem = useCartStore((state) => state.addItem);
+    const navigate = useNavigate();
 
-    const featuredProducts = [
-        {
-            _id: '1',
-            name: 'Linen Blend Jacket',
-            price: 129.00,
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjefqtLADRfiPGr3ydxbpOj70TqPqsci107sicsr1BD_q8dS_E2LbJ60CuAPCsTUqHrTvc-gCEZbzA8sW6pU3TJzDcb3m2227q-GyReHRMvevNfEE62fYVnA3YScEKZi8rDBrHwT2LJUHbG3o7uKH7irT3wrA6khDtcDJfQtHj0IjNfVSHwTsdPt9V_uowMlJ9ZkebnTRhXm0W9H-67GKtSAznG8b2y8e33nhGmXF5bDcKIQFMaJfAcC4p7R8XDHsYKQsIlGr-KSo',
-            category: 'Minimalist'
-        },
-        {
-            _id: '2',
-            name: 'Cotton Essential Tee',
-            price: 45.00,
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFv4ZXSy7Hz-SJntMGx7OZSixXUoka4kmh6mYgUG_YUXkW8KDHypgzFa0oV691XQrK3M5gueG8epO9ueJq2aGtLngBUx_5OS6uRKAFKh9O7sWZk3BfBx64tpNKeNb_p-ZMOBR_Re9wwvzhj16aGGvezAJ3JJyVNfAd6SKYp_e0lbVeI3_AM-h-pPcqLV7gRvxFMXeICTutwxI9UOPKlEpJCI0BkVWQ6ERQz67SfZ5K1-xjvrqMAXT82pFXqKf_TNfcjfeDNbVbcXA',
-            category: 'Essential'
-        },
-        {
-            _id: '3',
-            name: 'Straight Fit Denim',
-            price: 89.00,
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVLGUqc7u5Z_8KduL1406amMAHYe2478M8QC5TwtIeR3Yp4kV0hl4vU1r1DaskQRZQ71-z3eV_R852Az6vywjVHuR45_s_xbhejMe68MwHLF0gtySKRMOnRbTI2Rqn1IfCd_eSnAYLcilEE45no7MZ3nKum3AE91eA_KMvRBfj3qYxtSeS4B-qHQJP5LSQXyTsn5djXuexVHvQ493vrK-5lfBdXuyKJ0jVf7cmC4PP6f9PSaHZ94-dCnle14E4jKm7Ntwn5BpUwf4',
-            category: 'Denim'
-        },
-        {
-            _id: '4',
-            name: 'Classic Leather Boots',
-            price: 199.00,
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWH1MWC3fPxkAy_cHC8q-7wrmeIYwbYaSbwj5RgZovbAIGXDsa-RT289pdBhXOvVD3ApMhp18LFsaruZwBticIYBc0hGljiijPAxKE0Mpx7PQTE80tjQioXJizR9V1OIZbYTdVHUVEAMXEU89EWHMWwn9aWIVFP5ofmTfCVGQLCctwyEobyO1kU42eh0dm4cbbju0E6o3dujpRvx5U_yIJXyEltPiePyq7d_wcDVL5vcMoBBZe8-Jif2q2uNd0_g-z9UBXmxhV78s',
-            category: 'Footwear'
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const { data } = await api.get('/products');
+                // Only active products and limit to first 4
+                setProducts(data.filter(p => p.active !== false).slice(0, 4));
+            } catch (error) {
+                console.error('Error fetching products', error);
+            }
+        };
+        fetchProducts();
+    }, []);
+
+    const handleAddToCart = (product) => {
+        const availableSize = product.sizes && product.sizes.find(s => s.stock > 0);
+        if (availableSize) {
+            addItem(product, 1, availableSize.size);
+            alert('Producto añadido al carrito');
+        } else {
+            alert('Este producto no tiene stock disponible');
         }
-    ];
+    };
 
     return (
         <div>
@@ -67,7 +63,7 @@ const HomePage = () => {
                     <a href="#" className="text-sm font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors">Ver todas</a>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+                    <Link to="/shop?category=Hombre" className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
                         <div
                             className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                             style={{
@@ -78,8 +74,8 @@ const HomePage = () => {
                             <h3 className="text-white text-2xl font-black uppercase">Hombre</h3>
                             <p className="text-white/80 text-sm font-medium mt-1">Explorar Colección</p>
                         </div>
-                    </div>
-                    <div className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+                    </Link>
+                    <Link to="/shop?category=Mujer" className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
                         <div
                             className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                             style={{
@@ -90,8 +86,8 @@ const HomePage = () => {
                             <h3 className="text-white text-2xl font-black uppercase">Mujer</h3>
                             <p className="text-white/80 text-sm font-medium mt-1">Explorar Colección</p>
                         </div>
-                    </div>
-                    <div className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+                    </Link>
+                    <Link to="/shop?category=Accesorios" className="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
                         <div
                             className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
                             style={{
@@ -102,7 +98,7 @@ const HomePage = () => {
                             <h3 className="text-white text-2xl font-black uppercase">Accesorios</h3>
                             <p className="text-white/80 text-sm font-medium mt-1">Explorar Detalles</p>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </section>
 
@@ -116,21 +112,24 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {featuredProducts.map((product) => (
+                        {products.map((product) => (
                             <div key={product._id} className="group flex flex-col gap-4">
-                                <div className="relative aspect-[4/5] bg-white rounded-lg overflow-hidden">
+                                <Link to={`/product/${product._id}`} className="relative aspect-[4/5] bg-white rounded-lg overflow-hidden cursor-pointer">
                                     <img
                                         alt={product.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        src={product.image}
+                                        src={product.image?.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
                                     />
                                     <button
-                                        onClick={() => addItem(product, 1, 'M')}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleAddToCart(product);
+                                        }}
                                         className="absolute bottom-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                                     >
                                         <ShoppingCart className="text-primary w-5 h-5" />
                                     </button>
-                                </div>
+                                </Link>
                                 <div>
                                     <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{product.category}</p>
                                     <h4 className="font-bold text-slate-800">{product.name}</h4>

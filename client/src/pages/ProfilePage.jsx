@@ -10,23 +10,35 @@ const ProfilePage = () => {
     const { userInfo, logout } = useAuthStore();
     const navigate = useNavigate();
 
+    const fetchOrders = async () => {
+        try {
+            const { data } = await api.get('/orders/myorders');
+            setOrders(data);
+            setLoadingOrders(false);
+        } catch (error) {
+            console.error('Error fetching orders', error);
+            setLoadingOrders(false);
+        }
+    };
+
     useEffect(() => {
         if (!userInfo) {
             navigate('/login');
         } else {
-            const fetchOrders = async () => {
-                try {
-                    const { data } = await api.get('/orders/myorders');
-                    setOrders(data);
-                    setLoadingOrders(false);
-                } catch (error) {
-                    console.error('Error fetching orders', error);
-                    setLoadingOrders(false);
-                }
-            };
             fetchOrders();
         }
     }, [userInfo, navigate]);
+
+    const cancelOrderHandler = async (id) => {
+        if (window.confirm('¿Estás seguro de que deseas cancelar este pedido? Las prendas regresarán al stock.')) {
+            try {
+                await api.put(`/orders/${id}/cancel`);
+                fetchOrders();
+            } catch (error) {
+                alert(error.response?.data?.message || 'Error al cancelar el pedido');
+            }
+        }
+    };
 
     const logoutHandler = () => {
         logout();
@@ -104,14 +116,26 @@ const ProfilePage = () => {
                                             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total</p>
                                             <p className="text-sm font-black text-primary">${order.totalPrice.toFixed(2)}</p>
                                         </div>
-                                        <div className="px-4 py-1.5 bg-green-50 text-green-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-green-100">
-                                            Entregado
+                                        <div className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border ${order.status === 'Entregado' ? 'bg-green-50 text-green-600 border-green-100' : order.status === 'Cancelado' ? 'bg-red-50 text-red-600 border-red-100' : 'bg-slate-100 text-slate-600 border-slate-200'}`}>
+                                            {order.status || 'Pendiente'}
                                         </div>
+                                        {order.status === 'Pendiente' && (
+                                            <button
+                                                onClick={() => cancelOrderHandler(order._id)}
+                                                className="px-4 py-1.5 bg-red-50 text-red-500 hover:bg-red-100 rounded-full text-[10px] font-black uppercase tracking-widest border border-red-100 transition-all ml-auto"
+                                            >
+                                                Cancelar Pedido
+                                            </button>
+                                        )}
                                     </div>
                                     <div className="flex gap-4 overflow-x-auto pb-2">
                                         {order.orderItems.map((item, index) => (
                                             <div key={index} className="w-16 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-slate-50">
-                                                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                                <img 
+                                                    src={item.image?.startsWith('http') ? item.image : `http://localhost:5000${item.image}`} 
+                                                    alt={item.name} 
+                                                    className="w-full h-full object-cover" 
+                                                />
                                             </div>
                                         ))}
                                     </div>

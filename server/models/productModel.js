@@ -23,11 +23,12 @@ const productSchema = mongoose.Schema(
             required: true,
             default: 0,
         },
-        sizes: {
-            type: [String],
-            required: true,
-            default: ['XS', 'S', 'M', 'L', 'XL'],
-        },
+        sizes: [
+            {
+                size: { type: String, required: true },
+                stock: { type: Number, required: true, default: 0 }
+            }
+        ],
         active: {
             type: Boolean,
             required: true,

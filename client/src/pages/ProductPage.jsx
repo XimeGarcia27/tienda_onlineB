@@ -9,8 +9,14 @@ const ProductPage = () => {
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [selectedSize, setSelectedSize] = useState('M');
+    const [selectedSize, setSelectedSize] = useState('');
     const [qty, setQty] = useState(1);
+
+    // Helper for images
+    const getImageUrl = (img) => {
+        if (!img) return '';
+        return img.startsWith('http') ? img : `http://localhost:5000${img}`;
+    };
 
     const addItem = useCartStore((state) => state.addItem);
 
@@ -19,6 +25,11 @@ const ProductPage = () => {
             try {
                 const { data } = await api.get(`/products/${id}`);
                 setProduct(data);
+                // Select first available size by default
+                if (data.sizes && data.sizes.length > 0) {
+                    const availableSize = data.sizes.find(s => s.stock > 0);
+                    setSelectedSize(availableSize ? availableSize.size : data.sizes[0].size);
+                }
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching product', error);
@@ -32,6 +43,9 @@ const ProductPage = () => {
         addItem(product, qty, selectedSize);
         navigate('/cart');
     };
+
+    const currentSizeData = product?.sizes?.find(s => s.size === selectedSize);
+    const stockForSelectedSize = currentSizeData ? currentSizeData.stock : 0;
 
     if (loading) return <div className="min-h-screen flex items-center justify-center">Cargando...</div>;
     if (!product) return <div className="min-h-screen flex items-center justify-center">Producto no encontrado</div>;
@@ -48,7 +62,7 @@ const ProductPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-50">
                     <img
-                        src={product.image}
+                        src={getImageUrl(product.image)}
                         alt={product.name}
                         className="w-full h-full object-cover"
                     />
@@ -67,44 +81,58 @@ const ProductPage = () => {
                     </div>
 
                     <div className="mb-8">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Disponibilidad</h3>
+                        <p className={`font-black uppercase tracking-widest text-sm ${stockForSelectedSize > 0 ? 'text-green-600' : 'text-red-500'}`}>
+                            {stockForSelectedSize > 0 ? `${stockForSelectedSize} unidades en existencia de talla ${selectedSize}` : `Talla ${selectedSize} Agotada`}
+                        </p>
+                    </div>
+
+                    <div className="mb-8">
                         <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Seleccionar Talla</h3>
-                        <div className="flex gap-3">
-                            {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                        <div className="flex flex-wrap gap-3">
+                            {product.sizes && product.sizes.map((s) => (
                                 <button
-                                    key={size}
-                                    onClick={() => setSelectedSize(size)}
-                                    className={`w-12 h-12 rounded-lg border-2 font-bold transition-all ${selectedSize === size
+                                    key={s.size}
+                                    onClick={() => { setSelectedSize(s.size); setQty(1); }}
+                                    className={`px-6 h-12 rounded-lg border-2 font-bold transition-all flex items-center justify-center gap-2 ${selectedSize === s.size
                                             ? 'border-primary bg-primary text-white'
-                                            : 'border-slate-100 hover:border-slate-300'
-                                        }`}
+                                            : 'border-slate-100 hover:border-slate-300 text-slate-600'
+                                        } ${s.stock === 0 ? 'opacity-40 grayscale cursor-not-allowed' : ''}`}
                                 >
-                                    {size}
+                                    {s.size}
+                                    {s.stock === 0 && <span className="text-[8px] uppercase">(Sin stock)</span>}
                                 </button>
                             ))}
                         </div>
                     </div>
 
                     <div className="flex gap-4">
-                        <div className="flex items-center border-2 border-slate-100 rounded-xl overflow-hidden">
-                            <button
-                                onClick={() => setQty(Math.max(1, qty - 1))}
-                                className="px-4 py-2 hover:bg-slate-50 transition-colors font-bold"
-                            >
-                                -
-                            </button>
-                            <span className="px-4 font-bold">{qty}</span>
-                            <button
-                                onClick={() => setQty(qty + 1)}
-                                className="px-4 py-2 hover:bg-slate-50 transition-colors font-bold"
-                            >
-                                +
-                            </button>
-                        </div>
+                        {stockForSelectedSize > 0 && (
+                            <div className="flex items-center border-2 border-slate-100 rounded-xl overflow-hidden">
+                                <button
+                                    onClick={() => setQty(Math.max(1, qty - 1))}
+                                    className="px-4 py-2 hover:bg-slate-50 transition-colors font-bold"
+                                >
+                                    -
+                                </button>
+                                <span className="px-4 font-bold">{qty}</span>
+                                <button
+                                    onClick={() => setQty(Math.min(stockForSelectedSize, qty + 1))}
+                                    className="px-4 py-2 hover:bg-slate-50 transition-colors font-bold"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        )}
                         <button
                             onClick={addToCartHandler}
-                            className="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-primary transition-all flex items-center justify-center gap-2 uppercase tracking-widest shadow-xl"
+                            disabled={stockForSelectedSize === 0}
+                            className={`flex-1 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-widest shadow-xl ${stockForSelectedSize > 0
+                                    ? 'bg-slate-900 text-white hover:bg-primary'
+                                    : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
+                                }`}
                         >
-                            <ShoppingBag size={20} /> Agregar al Carrito
+                            <ShoppingBag size={20} /> {stockForSelectedSize > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
                         </button>
                     </div>
                 </div>

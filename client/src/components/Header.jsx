@@ -20,7 +20,10 @@ const Header = () => {
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
                         <Link to="/" className="text-sm font-semibold hover:text-primary transition-colors">Inicio</Link>
-                        <Link to="/shop" className="text-sm font-semibold hover:text-primary transition-colors">Tienda</Link>
+                        <Link to="/shop" className="text-sm font-semibold hover:text-primary transition-colors">Todo</Link>
+                        <Link to="/shop?category=Hombre" className="text-sm font-semibold hover:text-primary transition-colors">Hombre</Link>
+                        <Link to="/shop?category=Mujer" className="text-sm font-semibold hover:text-primary transition-colors">Mujer</Link>
+                        <Link to="/shop?category=Accesorios" className="text-sm font-semibold hover:text-primary transition-colors">Accesorios</Link>
                         <Link to="/about" className="text-sm font-semibold hover:text-primary transition-colors">Nosotros</Link>
                         <Link to="/contact" className="text-sm font-semibold hover:text-primary transition-colors">Contacto</Link>
                     </nav>
