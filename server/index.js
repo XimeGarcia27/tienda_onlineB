@@ -15,7 +15,9 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://tienda-onlineb-1.onrender.com"
+}))
 app.use(express.json());
 
 app.get('/', (req, res) => {
