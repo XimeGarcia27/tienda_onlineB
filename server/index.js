@@ -15,9 +15,14 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://tienda-onlineb-front.onrender.com"
+];
+
 app.use(cors({
-  origin: "https://tienda-onlineb-1.onrender.com"
-}))
+  origin: allowedOrigins
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
