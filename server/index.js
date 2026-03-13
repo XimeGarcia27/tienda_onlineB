@@ -8,7 +8,6 @@ import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 import path from 'path';
 
-
 dotenv.config();
 
 connectDB();
@@ -23,6 +22,7 @@ const allowedOrigins = [
 app.use(cors({
   origin: allowedOrigins
 }));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
