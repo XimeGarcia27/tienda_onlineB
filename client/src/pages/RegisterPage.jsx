@@ -39,7 +39,7 @@ const RegisterPage = () => {
                         <UserPlus size={32} className="text-primary" />
                     </div>
                     <h1 className="text-3xl font-black uppercase tracking-tight">Crear Cuenta</h1>
-                    <p className="text-slate-400 mt-2 font-medium">Únete a la comunidad Stitch</p>
+                    <p className="text-slate-400 mt-2 font-medium">Únete a la comunidad Ximand Store</p>
                 </div>
 
                 {(error || message) && (

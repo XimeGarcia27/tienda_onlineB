@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-6">
                             <LayoutDashboard className="text-primary w-8 h-8" />
-                            <h2 className="text-xl font-black tracking-tighter uppercase">Stitch</h2>
+                            <h2 className="text-xl font-black tracking-tighter uppercase">Ximand Store</h2>
                         </div>
                         <p className="text-slate-500 text-sm leading-relaxed mb-6">
                             Definiendo el estilo minimalista para la era moderna. Calidad premium y diseño atemporal.

@@ -25,7 +25,7 @@ const AboutPage = () => {
                     <div>
                         <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tight mb-8">¿Quiénes Somos?</h2>
                         <p className="text-lg text-slate-600 leading-relaxed mb-6 font-medium">
-                            En <span className="text-primary font-black uppercase">Stitch</span>, no solo vendemos ropa; creamos experiencias. Nacimos de la necesidad de ofrecer prendas con personalidad propia, combinando las últimas tendencias globales con una manufactura excepcional.
+                            En <span className="text-primary font-black uppercase">Ximand Store</span>, no solo vendemos ropa; creamos experiencias. Nacimos de la necesidad de ofrecer prendas con personalidad propia, combinando las últimas tendencias globales con una manufactura excepcional.
                         </p>
                         <p className="text-lg text-slate-600 leading-relaxed font-medium">
                             Nuestra misión es empoderar a cada persona a través de su estilo, brindando confianza y comodidad en cada paso que dan.

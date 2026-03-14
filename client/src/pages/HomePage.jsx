@@ -146,7 +146,7 @@ const HomePage = () => {
                 <div className="bg-slate-900 text-white rounded-3xl p-12 lg:p-20 overflow-hidden relative">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -mr-32 -mt-32"></div>
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/20 rounded-full -ml-24 -mb-24"></div>
-                    <h2 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Únete al Club Stitch</h2>
+                    <h2 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Únete al Club Ximand Store</h2>
                     <p className="text-slate-400 max-w-lg mx-auto mb-10 relative z-10">Suscríbete para recibir noticias sobre lanzamientos exclusivos, eventos y un 15% de descuento en tu primera compra.</p>
                     <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-10" onSubmit={(e) => e.preventDefault()}>
                         <input className="flex-1 bg-white/10 border-white/20 rounded-lg px-6 py-4 focus:ring-primary focus:border-primary text-white" placeholder="Tu email" type="email" />

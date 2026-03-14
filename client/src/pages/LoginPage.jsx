@@ -31,7 +31,7 @@ const LoginPage = () => {
                         <LogIn size={32} className="text-primary" />
                     </div>
                     <h1 className="text-3xl font-black uppercase tracking-tight">Bienvenido</h1>
-                    <p className="text-slate-400 mt-2 font-medium">Ingresa a tu cuenta Stitch</p>
+                    <p className="text-slate-400 mt-2 font-medium">Ingresa a tu cuenta Ximand Store</p>
                 </div>
 
                 {error && (

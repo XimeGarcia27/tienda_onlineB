@@ -51,7 +51,7 @@ const ShopPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-20 py-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
                 <div>
-                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-2">Stitch Collective</h2>
+                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-2">Ximand Store Collective</h2>
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
                         {categoryParam ? categoryParam : 'Toda la Colección'}
                     </h1>

@@ -36,7 +36,7 @@ const CartPage = () => {
 
             // Proceed to WhatsApp
             const itemsList = cartItems.map(item => `- ${item.name} (${item.size}) x${item.qty}: $${(item.price * item.qty).toFixed(2)}`).join('%0A');
-            const message = `*Nuevo Pedido - STITCH*%0A%0A${itemsList}%0A%0A*Total: $${total.toFixed(2)}*%0A%0A_Por favor, confírmenme los detalles de envío._`;
+            const message = `*Nuevo Pedido - Ximand Store*%0A%0A${itemsList}%0A%0A*Total: $${total.toFixed(2)}*%0A%0A_Por favor, confírmenme los detalles de envío._`;
 
             const phoneNumber = '524272441012'; // Replace with actual number
             window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');

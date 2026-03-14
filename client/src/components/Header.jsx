@@ -16,7 +16,7 @@ const Header = () => {
                 <div className="flex items-center gap-12">
                     <Link to="/" className="flex items-center gap-2">
                         <LayoutDashboard className="text-primary w-8 h-8" />
-                        <h2 className="text-xl font-black tracking-tighter uppercase">Stitch</h2>
+                        <h2 className="text-xl font-black tracking-tighter uppercase">Ximand Store</h2>
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
                         <Link to="/" className="text-sm font-semibold hover:text-primary transition-colors">Inicio</Link>
