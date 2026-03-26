@@ -39,7 +39,7 @@ const HomePage = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
                     style={{
-                        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.4), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAiJOAeCfhRDXnIIUXDkXJ-GMAZO5MwZ0avLiKbFst-yS4yHSoM7_v3egk2fmYByhJ4tovV2anEOLsZLRq4MRuFSHYqaRKlpsVw4aYVoQiT1Z4cHISl7Y2z2OnTeKQ2jZQo5AMTdm7RsQI4mFX_JrDYnbpWkovtHRrE73UMWvWe7wCFlVe5C3Wg9SUQ3XkMlL5oCuwR1GXRf1HP_QIJUf6136X-iwXEiM6-8Yz-k3FT94ntG7VQmMxgn09NpmfjpuoCrUba4yMzVU')`
+                        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.4), transparent), url('../pagina_1.jpg')`
                     }}
                 ></div>
                 <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-20 flex flex-col justify-center items-start text-white">

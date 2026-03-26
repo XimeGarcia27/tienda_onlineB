@@ -20,7 +20,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-1">Teléfono</h4>
-                                    <p className="text-lg font-bold text-slate-900">+52 427 244 1012</p>
+                                    <p className="text-lg font-bold text-slate-900">+52 222 111 1111</p>
                                 </div>
                             </div>
 
@@ -50,7 +50,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-1">WhatsApp</h4>
-                                    <a href="https://wa.me/524272441012" className="text-lg font-bold text-primary hover:underline">Chat Directo</a>
+                                    <a href="https://wa.me/52111111" className="text-lg font-bold text-primary hover:underline">Chat Directo</a>
                                 </div>
                             </div>
                         </div>
